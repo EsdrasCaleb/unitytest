@@ -1,3 +1,22 @@
-- name: Unity Code Smell Analyzer
-uses: EsdrasCaleb/unity-code-smell-analyzer-action@v0.1.1
-                       
+name: Unity Code Smell Analysis
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  code-smell-analysis:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Run Unity Code Smell Analyzer
+      uses: esdrascaleb/unity-code-smell-analyzer-action@v1
+      with:
+        unity_project_name: 'YourUnityProjectName' # Optional, defaults to repository name
