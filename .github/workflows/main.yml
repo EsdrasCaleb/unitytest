@@ -17,6 +17,6 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Run Unity Code Smell Analyzer
-      uses: esdrascaleb/unity-code-smell-analyzer-action@v1
+      uses: esdrascaleb/unity-code-smell-analyzer-action
       with:
-        unity_project_name: 'YourUnityProjectName' # Optional, defaults to repository name
+        unity_project_name: 'unitytest' # Optional, defaults to repository name
